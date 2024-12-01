@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+  }
+  .ticket-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .ticket {
+    background: #f9f9f9;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    page-break-inside: avoid;
+  }
+  .ticket .cartela-number {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  .ticket .random-number {
+    font-size: 18px;
+    color: #000;
+  }
+  @media print {
+    body {
+      margin: 0;
+    }
+    .ticket-container {
+      page-break-after: always;
+    }
+  }

@@ -25,15 +25,12 @@ cartelas.forEach(({ cartela, number }) => {
   const ticket = document.createElement('div');
   ticket.className = 'ticket';
   ticket.innerHTML = `
-      <div id="webcrumbs">
-      <!-- Contêiner principal -->
-      <div class="w-[900px] bg-white shadow rounded-lg p-6 flex gap-6 text-neutral-950">
-          
-          <!-- Seção esquerda -->
-          <div class="w-[900px] bg-white shadow rounded-lg p-4 flex gap-6 text-neutral-950">
+    <div id="webcrumbs">
+    <!-- Contêiner principal -->
+    <div class="w-[900px] bg-white shadow rounded-lg p-1 flex gap-1 text-neutral-950">
       
       <!-- Seção esquerda -->
-      <div class="flex flex-col w-1/2 gap-4">
+      <div class="flex flex-col w-1/2 gap-2">
         <div class="flex flex-col">
           <label class="text-sm font-bold">Nome</label>
           <hr class="border-neutral-300" />
@@ -50,13 +47,16 @@ cartelas.forEach(({ cartela, number }) => {
           <label class="text-sm font-bold">Vendedor</label>
           <hr class="border-neutral-300" />
         </div>
-        <div class="flex flex-col">
-        <label class="text-sm font-bold"># ${number}</label>
-        <hr class="border-neutral-300" />
-        </div>
-        <div class="flex flex-col">
-        <label class="text-sm font-bold"># ${cartela}</label>
-          <hr class="border-neutral-300" />
+        <div class="flex justify-between">
+        <img src="../assets/1732918690381.png" alt="logo" class=" w-10">
+          <div>
+            <label class="text-sm font-bold">${cartela}</label>
+            <hr class="border-neutral-300" />
+          </div>
+          <div>
+            <label class="text-sm font-bold">${number}</label>
+            <hr class="border-neutral-300" />
+          </div>
         </div>
       </div>
   
@@ -64,40 +64,31 @@ cartelas.forEach(({ cartela, number }) => {
       <div class="w-[2px] bg-neutral-300"></div>
   
       <!-- Seção direita -->
-      <div class="flex flex-col w-1/2 gap-4">
-        <!-- Título e subtítulo -->
-        <!-- <div class="text-right">
-          <h1 class="text-red-600 font-title text-lg font-bold">TÍTULO</h1>
-          <h2 class="text-sm text-neutral-500">Subtítulo</h2>
-        </div> -->
+      <div class="flex flex-col w-1/2 gap-1">
   
         <!-- Bloco de informações -->
-        <div class="border border-neutral-300 p-2 rounded-md flex flex-col gap-2">
-          <div class="flex flex-col items-center">
-            <span class="font-bold text-sm text-center">PRÊMIO</span>
+        <div class="border border-neutral-300 p-0 rounded-md flex flex-col gap-1">
+          <div class="flex flex items-center justify-evenly">
             <img src="../assets/images.jpg" alt="moto vermelha" class="w-40">
-            <span class="text-red-600 text-sm">moto honda titan 160</span>
+            <div class=" flex flex-col gap-2 items-center">
+                <img src="../assets/1732918690381.png" alt="logo" class=" w-20">
+              <span class="font-bold text-sm text-center">PRÊMIO</span>
+              <span class="text-red-600 text-sm">honda titan 160</span>
+            </div>
           </div>
-          <div class="flex justify-evenly gap-4">
+          <div class="flex justify-evenly gap-1">
             <div class="border border-neutral-300 rounded-md p-1 text-center">
               <span class="text-sm font-bold">R$</span>
               <span class="text-red-600 font-bold">_____,_____</span>
             </div>
-            <span class="text-sm"># ${number}</span>
-            <span class="text-sm"># ${cartela}</span>
+            <span class="text-sm">${number}</span>
+            <span class="text-sm">${cartela}</span>
             
           </div>
         </div>
-  
-        <!-- Informações adicionais -->
-        <!-- <div class="flex justify-between text-red-600 text-sm">
-          <span>Sorteio: 00/00/00</span>
-          <span>Outras informações</span>
-        </div> -->
       </div>
     </div>
-      </div>
-      </div>
+  </div>
   `;
   container.appendChild(ticket);
 });

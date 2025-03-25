@@ -17,7 +17,7 @@ function shuffleArray(array) {
 }
 
 // Gerar cartelas dentro de um intervalo
-function generateCartelasInRange(startSequence, endSequence) {
+function generateCartelasInRange(startSequence, endSequence,ticketValue) {
 	initializeNumbers(); // Garantir que os números estejam inicializados
 	const cartelas = [];
 
@@ -29,11 +29,12 @@ function generateCartelasInRange(startSequence, endSequence) {
 
 	const rangeCount = endSequence - startSequence + 1;
 
-	for (let i = 0; i < rangeCount && remainingNumbers.length > 0; i++) {
-		const number = remainingNumbers.shift(); // Pegar o primeiro número da lista
-		const formattedNumber = number.toString().padStart(4, '0');
+	for (let i = 0; i < rangeCount && remainingNumbers.length >= 4; i++) {
+		// Seleciona 5 números únicos da lista embaralhada
+		const selectedNumbers = remainingNumbers.splice(0, 4).map(num => num.toString().padStart(4, '0'));
+		
 		const cartelaNumber = (startSequence + i).toString().padStart(4, '0');
-		cartelas.push({ cartela: cartelaNumber, number: formattedNumber });
+		cartelas.push({ cartela: cartelaNumber, numbers: selectedNumbers, value: ticketValue });
 	}
 	return cartelas;
 }
@@ -43,12 +44,14 @@ document.getElementById('generate-btn').addEventListener('click', () => {
 	const errorMessage = document.getElementById('error-message');
 	const startSequenceInput = document.getElementById('start-sequence');
 	const endSequenceInput = document.getElementById('end-sequence');
+	const ticketValueInput = document.getElementById('ticket-value'); // Obtendo o valor digitado
 	const startSequence = parseInt(startSequenceInput.value, 10);
 	const endSequence = parseInt(endSequenceInput.value, 10);
+	const ticketValue = ticketValueInput.value.trim(); // Pegando o valor inserido
 
 	errorMessage.textContent = ''; // Limpar mensagens de erro
 	try {
-		const cartelas = generateCartelasInRange(startSequence, endSequence);
+		const cartelas = generateCartelasInRange(startSequence, endSequence, ticketValue);
 
 		// Salvar as cartelas no localStorage
 		localStorage.setItem('generatedCartelas', JSON.stringify(cartelas));
@@ -62,4 +65,3 @@ document.getElementById('generate-btn').addEventListener('click', () => {
 
 // Inicializar números na primeira carga
 initializeNumbers();
-

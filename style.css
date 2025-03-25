@@ -35,7 +35,7 @@ h1 {
 img {
   width: 180px;
   height: 180px;
-  border: 5px solid ;
+  border: 5px solid;
   object-fit: cover;  /* A imagem se ajusta ao tamanho do container, sem distorcer */
   border-radius: 50%;  /* Torna a imagem redonda */
   margin-bottom: 20px;
@@ -48,7 +48,8 @@ label {
   color: #555555;
 }
 
-input[type="number"] {
+input[type="number"],
+input[type="text"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -56,6 +57,14 @@ input[type="number"] {
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 1rem;
+}
+
+/* Estilo específico para o novo campo de valor do ticket */
+#ticket-value {
+  font-weight: bold;
+  color: #d9534f; /* Vermelho para destaque */
+  background-color: #fff5f5; /* Fundo mais suave */
+  text-align: center;
 }
 
 button {

@@ -53,7 +53,7 @@ cartelas.forEach(({ cartela, numbers, value}) => {
         <!-- Bloco de informações -->
         <div class="border border-neutral-300 p-0 rounded-md flex flex-col gap-1">
           <div class="flex flex items-center justify-evenly">
-            <img src="../assets/images.jpg" alt="moto vermelha" class="w-40">
+            <img src="../assets/image_resized.png" alt="imagem de prêmios" class="w-40">
             <div class=" flex flex-col gap-2 items-center">
                 <img src="../assets/logo.png" alt="logo" class=" w-20">
               <span class="font-bold text-sm text-center">PRÊMIO</span>

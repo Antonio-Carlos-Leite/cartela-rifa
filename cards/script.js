@@ -3,7 +3,7 @@ const cartelas = JSON.parse(localStorage.getItem('generatedCartelas')) || [];
 
 // Exibir as cartelas na página
 const container = document.getElementById('ticket-container');
-cartelas.forEach(({ cartela, numbers, value}) => {
+cartelas.forEach(({ cartela, numbers, value, premio }) => {
   const ticket = document.createElement('div');
   ticket.className = 'ticket';
   const formattedNumbers = numbers.join(' - '); // Exibir os números separados por "-"
@@ -54,11 +54,13 @@ cartelas.forEach(({ cartela, numbers, value}) => {
         <div class="border border-neutral-300 p-0 rounded-md flex flex-col gap-1">
           <div class="flex flex items-center justify-evenly">
             <img src="../assets/image_resized.png" alt="imagem de prêmios" class="w-40">
-            <div class=" flex flex-col gap-2 items-center">
-                <img src="../assets/logo.png" alt="logo" class=" w-20">
-              <span class="font-bold text-sm text-center">PRÊMIO</span>
-              <span class="text-red-600 text-sm">honda titan 160</span>
-            </div>
+                <div class=" flex flex-col gap-1 items-center">
+                  <img src="../assets/logo.png" alt="logo" class=" w-20">
+                  <div class=" flex flex-col border border-neutral-300 rounded-md p-1 text-center">
+                  <span class="font-bold text-sm text-center">PRÊMIO</span>
+                  <span id="textoPremio" class="font-bold text-red-600 text-sm">${premio}</span>
+                </div>
+                </div>
           </div>
           <div class="flex justify-evenly gap-1">
             <div class="border border-neutral-300 rounded-md p-1 text-center">
@@ -81,7 +83,7 @@ cartelas.forEach(({ cartela, numbers, value}) => {
 // Iniciar impressão automaticamente ao carregar a página
 window.onload = () => {
   if (cartelas.length > 0) {
-      window.print();
-      localStorage.removeItem('generatedCartelas');
+    window.print();
+    localStorage.removeItem('generatedCartelas');
   }
 };

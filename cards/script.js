@@ -10,10 +10,10 @@ cartelas.forEach(({ cartela, numbers, value, premio }) => {
   ticket.innerHTML = `
     <div id="webcrumbs">
     <!-- Contêiner principal -->
-    <div class="w-[900px] bg-white shadow rounded-lg p-1 flex gap-1 text-neutral-950">
+    <div class="w-[900px] bg-white shadow rounded-lg p-1 flex gap-1 text-neutral-950 border border-neutral-600">
       
       <!-- Seção esquerda -->
-      <div class="flex flex-col w-1/2 gap-2">
+      <div class="flex flex-col w-1/2 gap-3">
         <div class="flex flex-col">
           <label class="text-sm font-bold">Nome</label>
           <hr class="border-neutral-300" />
@@ -33,13 +33,12 @@ cartelas.forEach(({ cartela, numbers, value, premio }) => {
         <div class="flex justify-between">
         <img src="../assets/logo.png" alt="logo" class=" w-10">
           <div>
-            <label class="text-sm font-bold">${cartela}</label>
-            <hr class="border-neutral-300" />
+            <label class="text-sm font-bold border border-neutral-300 rounded-md p-1 text-center">${cartela}</label>
+
           </div>
           <div>
-            <label class="text-sm font-bold">${formattedNumbers}</label>
-          
-            <hr class="border-neutral-300" />
+            <label class="text-sm font-bold border border-neutral-300 rounded-md p-1 text-center">${formattedNumbers}</label>
+
           </div>
         </div>
       </div>
@@ -67,9 +66,9 @@ cartelas.forEach(({ cartela, numbers, value, premio }) => {
               <span class="text-sm font-bold">R$</span>
               <span class="text-red-600 font-bold">${value}</span>
             </div>
-            <span class="text-sm">${formattedNumbers}</span>
+            <span class="text-sm font-bold border border-neutral-300 rounded-md p-1 text-center">${formattedNumbers}</span>
             
-            <span class="text-sm">${cartela}</span>
+            <span class="text-sm font-bold border border-neutral-300 rounded-md p-1 text-center">${cartela}</span>
             
           </div>
         </div>

@@ -15,20 +15,21 @@ cartelas.forEach(({ cartela, numbers, value, premio }) => {
       <!-- Seção esquerda -->
       <div class="flex flex-col w-1/2 gap-3">
         <div class="flex flex-col">
-          <label class="text-sm font-bold">Nome</label>
+          <label class="text-sm font-bold">Nome:</label>
           <hr class="border-neutral-300" />
         </div>
         <div class="flex flex-col">
-          <label class="text-sm font-bold">Telefone</label>
+          <label class="text-sm font-bold">Telefone:</label>
           <hr class="border-neutral-300" />
         </div>
         <div class="flex flex-col">
-          <label class="text-sm font-bold">Endereço</label>
+          <label class="text-sm font-bold">Endereço:</label>
           <hr class="border-neutral-300" />
         </div>
-        <div class="flex flex-col">
-          <label class="text-sm font-bold">Vendedor</label>
-          <hr class="border-neutral-300" />
+        <div class="flex justify-between">
+            <label class="text-sm font-bold">Vendedor:</label>
+
+            <label class="text-sm font-bold">Data: _____/______/_______</label>
         </div>
         <div class="flex justify-between">
         <img src="../assets/logo.png" alt="logo" class=" w-10">
